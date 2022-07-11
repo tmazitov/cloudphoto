@@ -1,0 +1,7 @@
+a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+  text-decoration: none;
+  color: #666;
+}
+body { padding:16px; font-family: 'Open Sans', sans-serif; font-size : 16px}   

@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+
+import argparse
+
+from src.photo.download import download_photo
+from src.photo.upload import upload_photo
+from src.photo.list import albums_list, photos_list
+
+from src.generate.site import site
+
+commands = {
+    "upload": upload_photo,
+    "download": download_photo,
+    "list-photos": photos_list,
+    "list-albums": albums_list,
+    "generate-site": site
+}
+
+
+
+def setup_args():
+    parser = argparse.ArgumentParser(
+        description="Cloud photo application for upload, download and view photos and albums."
+    )
+    parser.add_argument("command", choices=list(commands), type=str, help="Commands")
+    parser.add_argument("--album", type=str, help="name of the required album")
+    parser.add_argument("--path", type=str, help="path of photos")
+    args = parser.parse_args()
+    return args
+
+
+def main(args):
+    command = commands.get(args.command, "")
+    command(args)
+
+
+if __name__ == "__main__":
+    args = setup_args()
+    main(args)

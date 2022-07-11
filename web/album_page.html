@@ -1,0 +1,162 @@
+<html>
+  <head>
+    <style>a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+  text-decoration: none;
+  color: #666;
+}
+body { padding:16px; font-family: 'Open Sans', sans-serif; font-size : 16px}   
+.galleria {
+    grid-template-rows: 82px calc(100% - 82px - 197px) 197px;
+    background-color: black;
+    color: rgb(238, 238, 238);
+    height: 80vh;
+    width: 1000px;
+    display: none;
+    overflow: hidden;
+}
+
+.galleria__title {
+    padding: 7px 19px;
+}
+
+.galleria__cont__items {
+    display: flex;
+    margin: 16px;
+    overflow-y: auto;
+}
+
+.galleria_item {
+    margin-right: 16px;
+    position: relative;
+}
+
+.bg-fon {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.bg-fon:hover {
+    background: rgba(0, 0, 0, .3);
+    cursor: pointer;
+}
+
+.bg-fon:active {
+    background: rgba(0, 0, 0, .4);
+    cursor: pointer;
+}
+
+.galleria__cont__current {
+    display: flex;
+    justify-content: center;
+    height: calc(100% - 82px - 197px);
+}a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+  text-decoration: none;
+  color: #666;
+}
+body { padding:16px; font-family: 'Open Sans', sans-serif; font-size : 16px}   
+ .album__item {
+     padding: 7px 19px;
+     border-radius: 5px;
+     min-width: 120px;
+     text-decoration: none;
+     border: 1px solid #d3d3d3;
+     margin-bottom: 16px;
+ }
+ 
+ .album__item:hover {
+     background: #d3d3d3;
+     cursor: pointer;
+     color: black;
+ }
+ 
+ .info__cont {
+     display: flex;
+     justify-content: center
+ }</style>
+  </head>
+  <body>
+    <h1>Альбомы</h1>
+    <div class="album__item" onclick="selectAlbum('japan')">
+      <a>japan</a>
+    </div>
+    <div class="album__item" onclick="selectAlbum('china')">
+      <a>china</a>
+    </div>
+    <div class="info__cont">
+      <div class="galleria" id="album__japan">
+        <h1 class="galleria__title">japan</h1>
+        <div class="galleria__cont__current">
+          <img id="current__image__japan" src="https://kfu-itis-spr16-site.website.yandexcloud.net/albums/japan/Japan.jpg" height="inherit" />
+        </div>
+        <div class="galleria__cont__items">
+          <div class="galleria_item">
+            <div class="bg-fon" onclick="selectPhoto('Japan.jpg')"></div>
+            <img src="https://kfu-itis-spr16-site.website.yandexcloud.net/albums/japan/Japan.jpg" height="148px" />
+          </div>
+          <div class="galleria_item">
+            <div class="bg-fon" onclick="selectPhoto('Shiba_inu.jpeg')"></div>
+            <img src="https://kfu-itis-spr16-site.website.yandexcloud.net/albums/japan/Shiba_inu.jpeg" height="148px" />
+          </div>
+          <div class="galleria_item">
+            <div class="bg-fon" onclick="selectPhoto('lucky_cat.jpeg')"></div>
+            <img src="https://kfu-itis-spr16-site.website.yandexcloud.net/albums/japan/lucky_cat.jpeg" height="148px" />
+          </div>
+        </div>
+        <script>var japan_photos = ['Japan.jpg', 'Shiba_inu.jpeg', 'lucky_cat.jpeg']; </script>
+      </div>
+      <div class="galleria" id="album__china">
+        <h1 class="galleria__title">china</h1>
+        <div class="galleria__cont__current">
+          <img id="current__image__china" src="https://kfu-itis-spr16-site.website.yandexcloud.net/albums/china/20190104-214817-largejpg.jpg" height="inherit" />
+        </div>
+        <div class="galleria__cont__items">
+          <div class="galleria_item">
+            <div class="bg-fon" onclick="selectPhoto('20190104-214817-largejpg.jpg')"></div>
+            <img src="https://kfu-itis-spr16-site.website.yandexcloud.net/albums/china/20190104-214817-largejpg.jpg" height="148px" />
+          </div>
+          <div class="galleria_item">
+            <div class="bg-fon" onclick="selectPhoto('Forbidden_City_Beijing_China_(164849005).jpeg')"></div>
+            <img src="https://kfu-itis-spr16-site.website.yandexcloud.net/albums/china/Forbidden_City_Beijing_China_(164849005).jpeg" height="148px" />
+          </div>
+          <div class="galleria_item">
+            <div class="bg-fon" onclick="selectPhoto('IMG_1345.jpeg')"></div>
+            <img src="https://kfu-itis-spr16-site.website.yandexcloud.net/albums/china/IMG_1345.jpeg" height="148px" />
+          </div>
+          <div class="galleria_item">
+            <div class="bg-fon" onclick="selectPhoto('dc7172a4d826f02595da60e01bbc4913.jpg')"></div>
+            <img src="https://kfu-itis-spr16-site.website.yandexcloud.net/albums/china/dc7172a4d826f02595da60e01bbc4913.jpg" height="148px" />
+          </div>
+        </div>
+        <script>var china_photos = ['20190104-214817-largejpg.jpg', 'Forbidden_City_Beijing_China_(164849005).jpeg', 'IMG_1345.jpeg', 'dc7172a4d826f02595da60e01bbc4913.jpg']; </script>
+      </div>
+    </div>
+    <script>
+                    var currentAlbum
+
+                    function selectAlbum(albumName){
+                        if(currentAlbum){
+                            document.getElementById("album__" + currentAlbum).style.display = "none";
+                        } else if (currentAlbum != albumName){
+                            document.getElementById("album__" + albumName).style.display = "none";
+                            currentAlbum = albumName;
+                            return
+                        } 
+                        currentAlbum = albumName;
+                        document.getElementById("album__" + albumName).style.display = "block";
+                    }
+
+                    function selectPhoto(photoName){
+                        let currentImage = document.getElementById("current__image__"+ currentAlbum)
+                        currentImage.src = 'https://kfu-itis-spr16-site.website.yandexcloud.net/' + 'albums/' + currentAlbum + '/' +photoName
+                    }
+
+                    </script>
+  </body>
+</html>

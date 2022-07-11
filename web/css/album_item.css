@@ -1,0 +1,19 @@
+ .album__item {
+     padding: 7px 19px;
+     border-radius: 5px;
+     min-width: 120px;
+     text-decoration: none;
+     border: 1px solid #d3d3d3;
+     margin-bottom: 16px;
+ }
+ 
+ .album__item:hover {
+     background: #d3d3d3;
+     cursor: pointer;
+     color: black;
+ }
+ 
+ .info__cont {
+     display: flex;
+     justify-content: center
+ }
