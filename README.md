@@ -5,7 +5,6 @@
 
 1. Install dependencies:
     🔶[boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) - main package for conect to Yandex Cloud Bucket
-    🔶[dotenv](https://pypi.org/project/python-dotenv/) - workig with.env files 
     🔶[yattag](https://www.yattag.org/) - generate .html files in python
     
     🔷 Python 3.8 or higher
