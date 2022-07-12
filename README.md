@@ -24,7 +24,7 @@
 4. Using!
 
 ## Commands:
-+ ```upload ```folder with photos to the Yandex Cloud Bucket.  
++ ```upload``` folder with photos to the Yandex Cloud Bucket.  
     * ```--path```  string  | path to the folder with photos for upload 
     * ```--album``` string  | your album name
     * ❗ uploading takes place in the root folder "albums"
@@ -34,11 +34,11 @@
     * ```--path```  string  | path to the folder for photos 
     * ```--album``` string  | album name
     ---
-+ ```list-albums ```print a list of the saved albums```
-+ ```list-photos ```print a list of thea saved photos by the album name```
++ ```list-albums``` print a list of the saved albums```
++ ```list-photos``` print a list of thea saved photos by the album name```
     * ```--album``` string  | album name
     ---
-+ ```generate-site```is a command, which build .html files for to view photos in the user interface by YC Bucket  [Static website](https://cloud.yandex.ru/docs/tutorials/web/static) .
++ ```generate-site``` is a command, which build .html files for to view photos in the user interface by YC Bucket  [Static website](https://cloud.yandex.ru/docs/tutorials/web/static) .
 
 ## Usefull:
 Upload file changes to the YC Bucket
