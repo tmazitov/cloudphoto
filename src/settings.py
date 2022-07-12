@@ -1,13 +1,9 @@
 import os
 import sys
 
-from dotenv import dotenv_values
 from .config import Config
 import boto3
 
-env = dotenv_values()
-print(env)
-URL = env.get("URL")
 home = os.environ["HOME"]
 
 path_to_config = f"{home}/.config/cloudphoto/cloudphotorc"
@@ -54,6 +50,8 @@ S3_CLIENT = boto3.client(
 )
 
 BUCKET_NAME = bucket
+
+URL = f"https://{BUCKET_NAME}.website.yandexcloud.net"
 
 
     

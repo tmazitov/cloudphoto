@@ -11,19 +11,13 @@
     🔷 Python 3.8 or higher
     🔷 Ubuntu or wsl
 
-1. Setup configs to .config/cloudphoto/```cloudphotorc.ini```: 
+1. Setup configs to .config/cloudphoto/```cloudphotorc```: 
 
         [default]
         bucket=backet_nameaws_access_key_id=AK*****************LE
         aws_secret_access_key=wJ**********************************EY
         region=ru-central1
         endpoint_url=https://storage.yandexcloud.net
-    
-
-
-2. Create .env file in the root of cloudphoto and put your URL like this:
-        
-        URL = https://kf**********te.website.yandexcloud.net/
 
 3. Setup yc ([Yandex Cloud]("https://cloud.yandex.ru/docs/cli/quickstart")) and [rclone](https://rclone.org/)
 
